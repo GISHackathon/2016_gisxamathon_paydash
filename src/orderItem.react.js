@@ -26,7 +26,14 @@ class OrderItem extends Component {
         return null;
         break;
       case 'distribute':
-        return <button className="btn" onClick={()=>{onDistributed(data)}}>vyřízeno</button>
+        return (
+          <div>
+            <div>Donést na místo: stojan 8</div>
+            <button className="btn" onClick={()=>{onDistributed(data)}}>
+              vyřízeno
+            </button>
+          </div>
+          )
         break;
       case 'done':
         return null
