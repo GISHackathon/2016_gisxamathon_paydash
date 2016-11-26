@@ -38,7 +38,8 @@ export const loadOrders = () => {
   }
 }
 
-export const confirmDelivery = (dispatch, item) => {
+export const confirmDelivery = (item) => {
+  console.log(item);
   // var myInit = { method: 'GET',
   // headers: myHeaders,
   // mode: 'cors',
@@ -46,26 +47,30 @@ export const confirmDelivery = (dispatch, item) => {
 
   return (dispatch) => {
     //FIXME set url for order
-    const url = `https://csasfunction.azurewebsites.net/api/HttpTriggerDashboard?code=Gl7ukfnLaXkg5A/DAfi2ANDRuHrBlBtNWyvM74cosWB7g5aZJKBSGw==`;
+    const url = `https://csasfunction.azurewebsites.net/api/HttpTriggerOrderDone?code=386qsjjt2asywihn0piy41v2t908nbn3121uyc0cb4zaq31y8pvixjwyub5rg923brg4eyt5zsemi`;
+
+
+    var payload = {
+        documentId: item.id
+    };
+
+    var data = new FormData();
+    data.append( "json", JSON.stringify( payload ) );
 
     dispatch({
       type:'setUploading',
       uploading: true
     })
 
-    return fetch(url)
-      .then(() => {
-        return new Promise((resolve, reject) => {
-          setTimeout(
-            () => {
-              resolve()
-              dispatch({
-                type:'setUploading',
-                uploading: false
-              })
-            }, 3000
-          )
-        });
+    return fetch(url,
+    {
+        method: "POST",
+        body: JSON.stringify( payload )
+    }).then(() => {
+      dispatch({
+        type:'setUploading',
+        uploading: false
       })
+      });
   }
 }

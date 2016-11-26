@@ -10,7 +10,7 @@ module.exports = {
   output : {
 		path : __dirname + "/dist",
 		filename : '[name]-[hash].js',
-		publicPath : '/'
+		publicPath : './'
 	},
 
   devtool: isProduction ? undefined : 'source-map',
@@ -44,7 +44,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin("app.css"),
+    new ExtractTextPlugin("./app.css"),
     new HtmlWebpackPlugin({
      template: 'src/index.html'
     }),
