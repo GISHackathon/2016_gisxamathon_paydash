@@ -6683,4 +6683,17 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
     display: none !important;
   }
 }
-/*# sourceMappingURL=bootstrap.css.map */
+/*# sourceMappingURL=bootstrap.css.map */.dashboard-table {
+  padding-top: 60px;
+}
+.grey {
+  background: #efefef;
+}
+.data-column {
+  min-height: 100%;
+}
+.order-item {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-bottom: #afafaf 2px solid;
+}

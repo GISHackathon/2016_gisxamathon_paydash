@@ -21,14 +21,18 @@ class App extends Component {
 
   render() {
     const {state:{reloading, uploading,dashboard:{prepare, checkin, distribute, done}}} = this.props;
+
+    // <h2>LOADING: {reloading ? 'reloading' : 'idle'}</h2>
+    // <h2>UPLOADING: {uploading ? 'uploading' : 'idle'}</h2>
+
     return (
       <div>
         <nav className={"navbar navbar-fixed-top navbar-dark bg-inverse"}>
-          <a className={"navbar-brand"} href="#">Dashboard</a>
+          <a className={"navbar-brand"} href="#">Pay AS go</a>
           <ul className={"nav navbar-nav"}>
             <li className={"nav-item active"}>
               <a className={"nav-link"} href="#">
-                dashboard
+                Dashboard
                 <span className={"sr-only"}>(current)</span>
               </a>
             </li>
@@ -36,9 +40,6 @@ class App extends Component {
         </nav>
         <div className={"container"}>
           <div className={"dashboard-table"}>
-            <h1>Dashboard</h1>
-            <h2>LOADING: {reloading ? 'reloading' : 'idle'}</h2>
-            <h2>UPLOADING: {uploading ? 'uploading' : 'idle'}</h2>
               <div className={"row"}>
                 <PrepareCol data={prepare} />
                 <CheckinCol data={checkin} />

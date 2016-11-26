@@ -13,7 +13,7 @@ export default class PrepareCol extends Component {
     }) : null;
 
     return (
-      <div className={"col-xs-3"}>
+      <div className={"col-xs-3 grey data-column"}>
         <h2>
           PŘIPRAVIT ({data.length})
         </h2>

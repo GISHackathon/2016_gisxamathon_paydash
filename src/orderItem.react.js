@@ -17,14 +17,16 @@ class OrderItem extends Component {
     const {data, onChecked, onDistributed} = this.props;
     switch (state) {
       case 'prepare':
-        return null;
+        return (<div>
+          Předpokládaný příjezd za [minut]: 45
+        </div>);
         break;
       case 'checkin':
         // return <button onClick={() => {onChecked(data)}}>odbavit</button>
         return null;
         break;
       case 'distribute':
-        return <button onClick={()=>{onDistributed(data)}}>vyřízeno</button>
+        return <button className="btn" onClick={()=>{onDistributed(data)}}>vyřízeno</button>
         break;
       case 'done':
         return null
@@ -36,13 +38,14 @@ class OrderItem extends Component {
     const {data, state, onChecked, onDistributed} = this.props;
     const content = this.getContentByState(state)
     return (
-      <div>
+      <div className="order-item">
         <h3>
           {data.client.name}
         </h3>
+        <h4>{data.order[0].name}</h4>
         {content}
-        <span>{data.order[0].name}</span>
-        <div>Počet: {data.order[0].quantity}</div>
+        <div>Počet: {data.order[0].quantity || 1}</div>
+        <img src={"http://loremflickr.com/100/75/coffe,food"} className={"img-responsive"} alt={"Responsive image"} />
       </div>
     )
   }

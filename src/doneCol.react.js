@@ -13,7 +13,7 @@ export default class DoneCol extends Component {
     }) : null;
 
     return (
-      <div className={"col-xs-3"}>
+      <div className={"col-xs-3 data-column"}>
         <h2>
           HOTOVO
         </h2>

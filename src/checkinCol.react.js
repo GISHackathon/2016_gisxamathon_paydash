@@ -14,7 +14,7 @@ export default class CheckinCol extends Component {
     }) : null;
 
     return (
-      <div className={"col-xs-3"}>
+      <div className={"col-xs-3 data-column"}>
         <h2>
           ODBAVIT
         </h2>
