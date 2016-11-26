@@ -15,7 +15,7 @@ export default class PrepareCol extends Component {
     return (
       <div className={"col-xs-3"}>
         <h2>
-          PŘIPRAVIT
+          PŘIPRAVIT ({data.length})
         </h2>
         {itemsElms}
       </div>
